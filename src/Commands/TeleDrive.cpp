@@ -21,7 +21,9 @@ void TeleDrive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void TeleDrive::Execute() {
 	auto& joyD = Robot::oi.getJD();
-	Robot::dTrain.JoyDr(joyD.GetRawAxis(1),joyD.GetRawAxis(0));
+	double x = joyD.GetRawAxis(1);
+	double y = joyD.GetRawAxis(0);
+	Robot::dTrain.JoyDr(x,y);
 }
 
 // Make this return true when this Command no longer needs to run execute()
