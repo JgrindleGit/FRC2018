@@ -18,15 +18,11 @@ void DriveT::InitDefaultCommand() {
 	// SetDefaultCommand(new MySpecialCommand());
 }
 
-void DriveT::SetMot(double pwr, int mot){
-	switch(mot){
-		case 1:
-			lDrive.Set(pwr);
-			break;
-		case 2:
-			rDrive.Set(pwr);
-			break;
-	}
+void DriveT::SetLMot(double pwr){
+	lDrive.Set(pwr);
+}
+void DriveT::SetRMot(double pwr){
+	rDrive.Set(pwr);
 }
 double DriveT::Constrain(double lower, double num, double high){
 	if(num<lower){
@@ -64,8 +60,8 @@ void DriveT::JoyDr(double dr,double tr){
 			rVal = max(-dr,-tr);
 		}
 	}
-	SetMot(lVal,1);
-	SetMot(rVal,2);
+	SetLMot(lVal);
+	SetRMot(rVal);
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

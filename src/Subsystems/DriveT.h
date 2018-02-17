@@ -8,7 +8,7 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
-#include <WPILib.h>
+#include <Spark.h>
 #include "../RobotMap.h"
 class DriveT : public frc::Subsystem {
 private:
@@ -22,7 +22,8 @@ public:
 	DriveT();
 	void InitDefaultCommand() override;
 
-	void SetMot(double pwr,int mot);
+	void SetLMot(double );
+	void SetRMot(double );
 	double Constrain(double,double,double);
 	void JoyDr(double dr,double tr);
 };
