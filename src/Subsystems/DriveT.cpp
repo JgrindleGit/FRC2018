@@ -20,10 +20,12 @@ void DriveT::InitDefaultCommand() {
 
 void DriveT::SetLMot(double pwr){
 	double setP = pwr;
+	setP = Constrain(-1,pwr,1);
 	lDrive.Set(setP);
 }
 void DriveT::SetRMot(double pwr){
 	double setP = pwr;
+	setP = Constrain(-1,pwr,1);
 	rDrive.Set(setP);
 }
 double DriveT::Constrain(double lower, double num, double high){
