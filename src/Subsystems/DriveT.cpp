@@ -13,8 +13,8 @@
 DriveT::DriveT() : frc::Subsystem("driveT") {
 	//lDrive = new frc::Spark(kLeftDr);
 	//rDrive = new frc::Spark(kRightDr);
-	lDrive->SetInverted(true);
-	rDrive->SetInverted(true);
+	//lDrive->SetInverted(true);
+	//rDrive->SetInverted(true);
 }
 
 void DriveT::InitDefaultCommand() {
