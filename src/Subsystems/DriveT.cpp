@@ -10,7 +10,8 @@
 #define max(x, y) (((x) > (y)) ? (x) : (y))
 
 DriveT::DriveT() : frc::Subsystem("driveT") {
-
+	//lDrive = new frc::Spark(kLeftDr);
+	//rDrive = new frc::Spark(kRightDr);
 }
 
 void DriveT::InitDefaultCommand() {
@@ -21,12 +22,12 @@ void DriveT::InitDefaultCommand() {
 void DriveT::SetLMot(double pwr){
 	double setP = pwr;
 	setP = Constrain(-1,pwr,1);
-	lDrive.Set(setP);
+	lDrive->Set(setP*1);
 }
 void DriveT::SetRMot(double pwr){
 	double setP = pwr;
 	setP = Constrain(-1,pwr,1);
-	rDrive.Set(setP);
+	rDrive->Set(setP);
 }
 double DriveT::Constrain(double lower, double num, double high){
 	if(num<lower){

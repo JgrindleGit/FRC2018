@@ -8,22 +8,23 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
-#include <Spark.h>
+#include <WPILib.h>
 #include "../RobotMap.h"
 class DriveT : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	frc::Spark lDrive{kLeftDr};
-	frc::Spark rDrive{kRightDr};
-
+	//frc::Spark* lDrive;
+	//frc::Spark* rDrive;
+	SpeedController* lDrive = new frc::Spark(kLeftDr);
+	SpeedController* rDrive = new frc::Spark(kRightDr);
 	bool defined;
 public:
 	DriveT();
 	void InitDefaultCommand() override;
 
-	void SetLMot(double );
-	void SetRMot(double );
+	void SetLMot(double pwr);
+	void SetRMot(double pwr);
 	double Constrain(double,double,double);
 	void JoyDr(double dr,double tr);
 };
