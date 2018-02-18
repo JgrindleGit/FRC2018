@@ -7,7 +7,7 @@
 
 #include "GyTurn.h"
 
-GyTurn::GyTurn() {
+GyTurn::GyTurn(double m_degree, double m_kP,double m_kI,double m_kD) {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::dTrain);
@@ -15,7 +15,7 @@ GyTurn::GyTurn() {
 
 // Called just before this Command runs the first time
 void GyTurn::Initialize() {
-
+	//gyPID = new PID();
 }
 
 // Called repeatedly when this Command is scheduled to run

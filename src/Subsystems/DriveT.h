@@ -19,6 +19,7 @@ private:
 	SpeedController* lDrive = new frc::Spark(kLeftDr);
 	SpeedController* rDrive = new frc::Spark(kRightDr);
 	bool defined;
+	double dPulse;
 public:
 	DriveT();
 	void InitDefaultCommand() override;

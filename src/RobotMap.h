@@ -25,6 +25,8 @@ constexpr int kLift = 2;
 
 constexpr int kLeftIn = 3;
 constexpr int kRightIn= 4;
+constexpr double wheelDia = 6;
+const float uPI = acos(-1);
 // If you are using multiple modules, make sure to define both the port
 // number and the module. For example you with a rangefinder:
 // constexpr int kRangeFinderPort = 1;

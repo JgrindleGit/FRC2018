@@ -12,7 +12,7 @@
 #include "../PID.h"
 class EncDrive : public frc::Command {
 public:
-	EncDrive();
+	EncDrive(double,double,double,double);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

@@ -12,13 +12,13 @@
 #include "../PID.h"
 class GyTurn : public frc::Command {
 public:
-	GyTurn();
+	GyTurn(double,double,double,double);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;
 	void End() override;
 	void Interrupted() override;
 private:
-	PID gyPid;
+	PID gyPID;
 };
 

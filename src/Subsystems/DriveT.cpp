@@ -15,6 +15,7 @@ DriveT::DriveT() : frc::Subsystem("driveT") {
 	//rDrive = new frc::Spark(kRightDr);
 	//lDrive->SetInverted(true);
 	//rDrive->SetInverted(true);
+	dPulse = (((uPI*wheelDia)/12)/360);
 }
 
 void DriveT::InitDefaultCommand() {
