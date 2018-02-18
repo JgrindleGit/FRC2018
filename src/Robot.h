@@ -10,6 +10,7 @@
 //#include "Commands/Autonomous.h"
 #include "OI.h"
 #include "Subsystems/DriveT.h"
+#include "Commands/TeleDrive.h"
 
 
 class Robot : public frc::IterativeRobot {
@@ -28,4 +29,5 @@ private:
 	void TeleopInit() override;
 	void TeleopPeriodic() override;
 	void TestPeriodic() override;
+	frc::Command* drive;
 };

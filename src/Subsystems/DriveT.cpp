@@ -6,12 +6,15 @@
 /*----------------------------------------------------------------------------*/
 
 #include "DriveT.h"
-#include "../RobotMap.h"
+#include "../Robot.h"
+#include <iostream>
 #define max(x, y) (((x) > (y)) ? (x) : (y))
 
 DriveT::DriveT() : frc::Subsystem("driveT") {
 	//lDrive = new frc::Spark(kLeftDr);
 	//rDrive = new frc::Spark(kRightDr);
+	lDrive->SetInverted(true);
+	rDrive->SetInverted(true);
 }
 
 void DriveT::InitDefaultCommand() {
@@ -22,7 +25,7 @@ void DriveT::InitDefaultCommand() {
 void DriveT::SetLMot(double pwr){
 	double setP = pwr;
 	setP = Constrain(-1,pwr,1);
-	lDrive->Set(setP*1);
+	lDrive->Set(setP);
 }
 void DriveT::SetRMot(double pwr){
 	double setP = pwr;

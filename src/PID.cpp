@@ -57,6 +57,7 @@ float PID::dzFix(float z, float deadzone)
 			z = 0;
 		}
 	return z;
+
 }
 void PID::TimerStart(){
 	timer->Start();
