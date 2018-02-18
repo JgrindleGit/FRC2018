@@ -24,7 +24,7 @@ void TeleDrive::Execute() {
 	auto& joyD = Robot::oi.getJD();
 	double x = joyD.GetX();
 	double y = joyD.GetY();
-	Robot::dTrain.JoyDr(x,y);
+	Robot::dTrain.JoyDr(-y,-x);
 }
 
 // Make this return true when this Command no longer needs to run execute()
