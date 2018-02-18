@@ -25,6 +25,7 @@ void Robot::TeleopInit() {
 	//m_autonomousCommand.Cancel();
 	std::cout << "Starting Teleop" << std::endl;
 	drive = new TeleDrive();
+	drive->Start();
 }
 
 void Robot::TeleopPeriodic() {
