@@ -22,6 +22,8 @@ constexpr int kLeftDr = 0;
 constexpr int kRightDr = 1;
 
 constexpr int kLift = 2;
+constexpr int kBotLim= 2;
+constexpr int kTopLim = 3;
 
 constexpr int kLeftIn = 3;
 constexpr int kRightIn= 4;
