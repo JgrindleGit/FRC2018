@@ -4,6 +4,7 @@
 
 DriveT Robot::dTrain;
 Elevator Robot::ele;
+Intake Robot::in;
 OI Robot::oi;
 void Robot::RobotInit() {
 
@@ -25,6 +26,7 @@ void Robot::TeleopInit() {
 	// this line or comment it out.
 	//m_autonomousCommand.Cancel();
 	std::cout << "Starting Teleop" << std::endl;
+	movEle = new TeleEle();
 	drive = new TeleDrive();
 	drive->Start();
 }
