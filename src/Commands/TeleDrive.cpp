@@ -24,6 +24,7 @@ void TeleDrive::Execute() {
 	auto& joyD = Robot::oi.getJD();
 	double x = joyD.GetX();
 	double y = joyD.GetY();
+
 	Robot::dTrain.JoyDr(-y,-x);
 }
 
