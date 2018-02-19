@@ -6,18 +6,23 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+
+#include <Commands/Subsystem.h>
 #include <WPILib.h>
-#include <Joystick.h>
-class OI {
-public:
-	OI();
-	frc::Joystick& getJD();
-	frc::Joystick& getJO();
-
-
+#include "../RobotMap.h"
+//#include <iostream>
+class Intake : public frc::Subsystem {
 private:
-	frc::Joystick m_joy{0};
-	frc::Joystick o_joy{1};
-	frc::JoystickButton in{&o_joy,1};
-	frc::JoystickButton out{&o_joy,0};
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+	//double mSpeed = 0.75;
+	SpeedController* inLeft = new frc::Spark(kLeftIn);
+	SpeedController* inRight = new frc::Spark(kRightIn);
+public:
+	Intake();
+	void InitDefaultCommand() override;
+	void mIn();
+	void mOut();
+	void mStop();
 };
+
