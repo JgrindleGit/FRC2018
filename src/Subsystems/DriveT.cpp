@@ -51,25 +51,30 @@ void DriveT::JoyDr(double dr,double tr){
 		if(tr>0.0){
 			lVal = dr -tr;
 			rVal = max(dr,tr);
+			printf("Left: %f, Right %f",lVal,rVal);
 		}else{
 			lVal = max(dr,-tr);
 			rVal = dr +tr;
+			printf("Left: %f, Right %f",lVal,rVal);
 		}
 	}
 	else{
 		if(tr>0.0){
 			lVal = -max(-dr,tr);
 			rVal = dr+tr;
+			printf("Left: %f, Right %f",lVal,rVal);
 
 		}
 		else
 		{
 			lVal = dr-tr;
 			rVal = max(-dr,-tr);
+			printf("Left: %f, Right %f",lVal,rVal);
 		}
 	}
 	SetLMot(lVal);
 	SetRMot(rVal);
+	printf("Left: %f, Right %f",lVal,rVal);
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
