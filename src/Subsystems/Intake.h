@@ -8,14 +8,21 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
-
+#include <WPILib.h>
+#include "../RobotMap.h"
+//#include <iostream>
 class Intake : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-
+	//double mSpeed = 0.75;
+	SpeedController* inLeft = new frc::Spark(kLeftIn);
+	SpeedController* inRight = new frc::Spark(kRightIn);
 public:
 	Intake();
 	void InitDefaultCommand() override;
+	void mIn();
+	void mOut();
+	void mStop();
 };
 
