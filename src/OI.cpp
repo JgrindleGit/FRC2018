@@ -17,3 +17,6 @@ OI::OI() {
 frc::Joystick& OI::getJD(){
 	return m_joy;
 }
+frc::Joystick& OI::getJO(){
+	return o_joy;
+}

@@ -12,6 +12,8 @@ class OI {
 public:
 	OI();
 	frc::Joystick& getJD();
+	frc::Joystick& getJO();
 private:
 	frc::Joystick m_joy{0};
+	frc::Joystick o_joy{1};
 };

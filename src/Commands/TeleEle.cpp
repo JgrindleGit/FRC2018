@@ -6,10 +6,11 @@
 /*----------------------------------------------------------------------------*/
 
 #include "TeleEle.h"
-
+#include "../Robot.h"
 TeleEle::TeleEle() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
+	Requires(&Robot::ele);
 }
 
 // Called just before this Command runs the first time
