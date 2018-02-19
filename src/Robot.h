@@ -11,12 +11,13 @@
 #include "OI.h"
 #include "Subsystems/DriveT.h"
 #include "Commands/TeleDrive.h"
+#include "Subsystems/Elevator.h"
 
 
 class Robot : public frc::IterativeRobot {
 public:
 	static DriveT dTrain;
-
+	static Elevator ele;
 	static OI oi;
 
 private:
