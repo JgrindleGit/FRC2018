@@ -5,41 +5,36 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "TeleDrive.h"
+#include "IntakeOut.h"
 #include "../Robot.h"
-#include <iostream>
-TeleDrive::TeleDrive() {
+IntakeOut::IntakeOut() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
-	Requires(&Robot::dTrain);
+	Requires(&Robot::in);
 }
 
 // Called just before this Command runs the first time
-void TeleDrive::Initialize() {
+void IntakeOut::Initialize() {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void TeleDrive::Execute() {
-	auto& joyD = Robot::oi.getJD();
-	double x = joyD.GetX();
-	double y = joyD.GetY();
-
-	Robot::dTrain.JoyDr(-y,-x);
+void IntakeOut::Execute() {
+	Robot::in.mOut();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool TeleDrive::IsFinished() {
+bool IntakeOut::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void TeleDrive::End() {
-
+void IntakeOut::End() {
+	Robot::in.mStop();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void TeleDrive::Interrupted() {
-
+void IntakeOut::Interrupted() {
+	End();
 }

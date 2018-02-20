@@ -5,41 +5,38 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "TeleDrive.h"
+#include "TeleEle.h"
 #include "../Robot.h"
-#include <iostream>
-TeleDrive::TeleDrive() {
+TeleEle::TeleEle() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
-	Requires(&Robot::dTrain);
+	Requires(&Robot::ele);
 }
 
 // Called just before this Command runs the first time
-void TeleDrive::Initialize() {
+void TeleEle::Initialize() {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void TeleDrive::Execute() {
-	auto& joyD = Robot::oi.getJD();
-	double x = joyD.GetX();
-	double y = joyD.GetY();
-
-	Robot::dTrain.JoyDr(-y,-x);
+void TeleEle::Execute() {
+	auto& joyO = Robot::oi.getJO();
+	double speed = joyO.GetY();
+	Robot::ele.Move(speed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool TeleDrive::IsFinished() {
+bool TeleEle::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void TeleDrive::End() {
-
+void TeleEle::End() {
+	Robot::ele.Move(0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void TeleDrive::Interrupted() {
+void TeleEle::Interrupted() {
 
 }
