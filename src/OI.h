@@ -16,4 +16,5 @@ public:
 private:
 	frc::Joystick m_joy{0};
 	frc::Joystick o_joy{1};
+	frc::JoystickButton o_joyIn{o_joy,1};
 };
