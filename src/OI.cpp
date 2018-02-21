@@ -8,10 +8,12 @@
 #include "OI.h"
 
 #include <WPILib.h>
-
+#include "Commands/IntakeIn.h"
+#include "Commands/IntakeOut.h"
 OI::OI() {
 	// Process operator interface input here.
-
+	o_joyIn.WhileHeld(new IntakeIn());
+	o_joyOut.WhileHeld(new IntakeOut());
 
 }
 frc::Joystick& OI::getJD(){
