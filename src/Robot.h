@@ -10,13 +10,17 @@
 //#include "Commands/Autonomous.h"
 #include "OI.h"
 #include "Subsystems/DriveT.h"
+#include "Subsystems/Elevator.h"
+#include "Subsystems/Intake.h"
 #include "Commands/TeleDrive.h"
+#include "Commands/TeleEle.h"
 
 
 class Robot : public frc::IterativeRobot {
 public:
 	static DriveT dTrain;
-
+	static Elevator ele;
+	static Intake in;
 	static OI oi;
 
 private:
@@ -30,4 +34,5 @@ private:
 	void TeleopPeriodic() override;
 	void TestPeriodic() override;
 	frc::Command* drive;
+	frc::Command* moveEle;
 };

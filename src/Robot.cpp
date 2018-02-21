@@ -1,7 +1,7 @@
 #include "Robot.h"
 
 #include <iostream>
-
+Elevator Robot::ele;
 DriveT Robot::dTrain;
 OI Robot::oi;
 void Robot::RobotInit() {
@@ -24,11 +24,10 @@ void Robot::TeleopInit() {
 	// this line or comment it out.
 	//m_autonomousCommand.Cancel();
 	std::cout << "Starting Teleop" << std::endl;
-<<<<<<< HEAD
-=======
-	movEle = new TeleEle();
-	movEle->Start();
->>>>>>> Eleveator-intake
+
+	moveEle = new TeleEle();
+	moveEle->Start();
+
 	drive = new TeleDrive();
 	drive->Start();
 }

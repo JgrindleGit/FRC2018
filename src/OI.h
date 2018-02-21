@@ -12,15 +12,12 @@ class OI {
 public:
 	OI();
 	frc::Joystick& getJD();
-<<<<<<< HEAD
-private:
-	frc::Joystick m_joy{0};
-=======
 	frc::Joystick& getJO();
+
 private:
 	frc::Joystick m_joy{0};
 	frc::Joystick o_joy{1};
 	frc::JoystickButton o_joyIn{&o_joy,1};
 	frc::JoystickButton o_joyOut{&o_joy,2};
->>>>>>> Eleveator-intake
+
 };

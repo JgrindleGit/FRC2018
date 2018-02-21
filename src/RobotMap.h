@@ -22,14 +22,15 @@ constexpr int kLeftDr = 0;
 constexpr int kRightDr = 1;
 
 constexpr int kLift = 2;
+constexpr int kBotLim = 2;
+constexpr int kTopLim = 3;
 
 constexpr int kLeftIn = 3;
 constexpr int kRightIn= 4;
-<<<<<<< HEAD
-=======
+
 
 constexpr int mSpeed= 0.75;
->>>>>>> Eleveator-intake
+
 // If you are using multiple modules, make sure to define both the port
 // number and the module. For example you with a rangefinder:
 // constexpr int kRangeFinderPort = 1;
