@@ -5,22 +5,27 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
-#include <WPILib.h>
-#include <Joystick.h>
-class OI {
-public:
-	OI();
-	frc::Joystick& getJD();
-<<<<<<< HEAD
-private:
-	frc::Joystick m_joy{0};
-=======
-	frc::Joystick& getJO();
-private:
-	frc::Joystick m_joy{0};
-	frc::Joystick o_joy{1};
-	frc::JoystickButton o_joyIn{&o_joy,1};
-	frc::JoystickButton o_joyOut{&o_joy,2};
->>>>>>> Eleveator-intake
-};
+#include "Intake.h"
+//#include "../RobotMap.h"
+#include "../Robot.h"
+#include <iostream>
+Intake::Intake() : Subsystem("ExampleSubsystem") {
+
+}
+
+void Intake::InitDefaultCommand() {
+	// Set the default command for a subsystem here.
+	// SetDefaultCommand(new MySpecialCommand());
+}
+void Intake::mIn(){
+	inLeft->Set(mSpeed);
+	inRight->Set(-mSpeed);
+}
+void Intake::mOut(){
+	inLeft->Set(-mSpeed);
+	inRight->Set(mSpeed);
+}
+void Intake::mStop(){
+	inLeft->Set(0);
+	inRight->Set(0);
+}

@@ -11,7 +11,12 @@
 
 OI::OI() {
 	// Process operator interface input here.
+<<<<<<< HEAD
 
+=======
+	o_joyIn.WhileHeld(new IntakeIn());
+	o_joyOut.WhileHeld(new IntakeOut());
+>>>>>>> Eleveator-intake
 
 }
 frc::Joystick& OI::getJD(){
