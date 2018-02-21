@@ -13,11 +13,7 @@ public:
 	OI();
 	frc::Joystick& getJD();
 	frc::Joystick& getJO();
-
-
 private:
 	frc::Joystick m_joy{0};
 	frc::Joystick o_joy{1};
-	frc::JoystickButton in{&o_joy,1};
-	frc::JoystickButton out{&o_joy,0};
 };
