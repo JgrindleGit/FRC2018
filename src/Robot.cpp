@@ -3,6 +3,7 @@
 #include <iostream>
 Elevator Robot::ele;
 DriveT Robot::dTrain;
+Intake Robot::in;
 OI Robot::oi;
 void Robot::RobotInit() {
 

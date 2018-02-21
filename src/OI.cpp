@@ -8,7 +8,7 @@
 #include "OI.h"
 
 #include <WPILib.h>
-#include "Commands/Intakein.h"
+#include "Commands/IntakeIn.h"
 #include "Commands/IntakeOut.h"
 OI::OI() {
 	// Process operator interface input here.
