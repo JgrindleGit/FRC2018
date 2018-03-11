@@ -10,8 +10,8 @@ void Elevator::InitDefaultCommand() {
 	// SetDefaultCommand(new MySpecialCommand());
 }
 void Elevator::Move(double speed){
-	if(topLimit1->Get()){
-		printf("isTopLim: %f \n", topLimit1->Get());
+	if(GetTopLim()){
+		printf("TopLimGot");
 		if(speed < 0){
 			SetDrive(speed);
 			//printf("ESpeed: %f", speed);
@@ -20,7 +20,7 @@ void Elevator::Move(double speed){
 			//printf("ESpeed: %f", speed);
 		}
 	}else if(botLimit->Get()){
-		printf("isBotLim: %f \n", botLimit->Get());
+		printf("BotLimGot");
 		if (speed > 0){
 			SetDrive(speed);
 			//printf("ESpeed: %f", speed);
