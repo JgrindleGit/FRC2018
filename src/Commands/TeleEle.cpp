@@ -15,8 +15,10 @@ void TeleEle::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void TeleEle::Execute() {
 	auto& joyO = Robot::oi.getJO();
-	double speed = joyO.GetY();
-	Robot::ele.Move(speed);
+	double speed = joyO.GetRawAxis(1);
+	//std::out<<"axisY2Info: %f", speed <<std::endl;
+	//printf("AxisY2Info: %f \n", speed);
+	Robot::ele.SetDrive(speed);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -23,7 +23,8 @@ constexpr int kRightDr = 1;
 
 constexpr int kLift = 2;
 constexpr int kBotLim = 2;
-constexpr int kTopLim = 3;
+constexpr int kTopLim1 = 3;
+constexpr int kTopLim2 = 4;
 
 constexpr int kLeftIn = 3;
 constexpr int kRightIn= 4;

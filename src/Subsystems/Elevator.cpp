@@ -10,19 +10,38 @@ void Elevator::InitDefaultCommand() {
 	// SetDefaultCommand(new MySpecialCommand());
 }
 void Elevator::Move(double speed){
-	if(topLimit->Get()){
+	if(topLimit1->Get()){
+		printf("isTopLim: %f \n", topLimit1->Get());
 		if(speed < 0){
-			eDrive->Set(speed);
+			SetDrive(speed);
+			//printf("ESpeed: %f", speed);
 		}else{
-			eDrive->Set(0);
+			SetDrive(0);
+			//printf("ESpeed: %f", speed);
 		}
 	}else if(botLimit->Get()){
+		printf("isBotLim: %f \n", botLimit->Get());
 		if (speed > 0){
-			eDrive->Set(speed);
+			SetDrive(speed);
+			//printf("ESpeed: %f", speed);
 		}else{
-			eDrive->Set(0);
+			SetDrive(0);
+			//printf("ESpeed: %f", speed);
 		}
 	}else {
-		eDrive->Set(speed);
+		SetDrive(speed);
+		//printf("ESpeed: %f", speed);
+	}
+}
+void Elevator::SetDrive(double speed){
+	eDrive->Set(speed);
+	printf("Espeed: %f \n", speed);
+}
+bool Elevator::GetTopLim(){
+	if(topLimit1->Get() && topLimit2->Get()){
+		return true;
+	}
+	else {
+		return false;
 	}
 }

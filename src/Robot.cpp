@@ -35,6 +35,7 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() {
 	frc::Scheduler::GetInstance()->Run();
+	printf("Imfuckingworking \n");
 }
 
 void Robot::TestPeriodic() {}
