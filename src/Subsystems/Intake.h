@@ -18,10 +18,18 @@ private:
 	//double mSpeed = 0.75;
 	SpeedController* inLeft = new frc::Spark(kLeftIn);
 	SpeedController* inRight = new frc::Spark(kRightIn);
+
+	DigitalInput* dropCheck = new frc::DigitalInput(kDropCheck);
+	SpeedController* dropper = new frc::Spark(kDropper);
+
+	bool isDown = false;
 public:
 	Intake();
 	void InitDefaultCommand() override;
 	void mIn();
 	void mOut();
 	void mStop();
+	void DropIn();
+	void DropStop();
+	bool GetDropCheck();
 };

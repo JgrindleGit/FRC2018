@@ -6,18 +6,16 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <WPILib.h>
-#include <Joystick.h>
-class OI {
+
+#include <Commands/Command.h>
+
+class IntakeDrop : public frc::Command {
 public:
-	OI();
-	frc::Joystick& getJD();
-	frc::Joystick& getJO();
-
-private:
-	frc::Joystick m_joy{0};
-	frc::Joystick o_joy{1};
-	frc::JoystickButton o_joyIn{&m_joy,1};
-	frc::JoystickButton o_joyOut{&m_joy,2};
-
+	IntakeDrop();
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
 };
+

@@ -29,8 +29,10 @@ constexpr int kTopLim2 = 4;
 constexpr int kLeftIn = 3;
 constexpr int kRightIn= 4;
 
+constexpr int kDropper = 5;
+constexpr int kDropCheck = 5;
 
-constexpr int mSpeed= 0.75;
+constexpr int mSpeed= 1;
 
 // If you are using multiple modules, make sure to define both the port
 // number and the module. For example you with a rangefinder:
